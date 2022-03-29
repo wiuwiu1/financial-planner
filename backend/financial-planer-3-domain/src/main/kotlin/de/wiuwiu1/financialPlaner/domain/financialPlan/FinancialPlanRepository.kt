@@ -1,6 +1,6 @@
-package de.wiuwiu1.financialPlan
+package de.wiuwiu1.financialPlaner.domain.financialPlan
 
-import de.wiuwiu1.types.Id
+import de.wiuwiu1.financialPlaner.domain.types.Id
 
 interface FinancialPlanRepository {
     fun findAll(): List<FinancialPlan>

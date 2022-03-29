@@ -1,4 +1,4 @@
-package de.wiuwiu1.types
+package de.wiuwiu1.financialPlaner.domain.types
 
 data class Name(val value: String) {
     init {
