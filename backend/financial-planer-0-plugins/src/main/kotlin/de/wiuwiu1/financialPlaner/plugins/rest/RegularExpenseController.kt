@@ -29,7 +29,10 @@ class RegularExpenseController(
     }
 
     @PostMapping(params = ["planId"], consumes = ["application/json;charset=UTF-8"])
-    fun addRegularExpense(@RequestParam planId: Long, @RequestBody regularExpenseDTO: RegularExpenseDTO): RegularExpenseDTO {
+    fun addRegularExpense(
+        @RequestParam planId: Long,
+        @RequestBody regularExpenseDTO: RegularExpenseDTO
+    ): RegularExpenseDTO {
         return regularExpenseToDTOMapper.apply(
             service.addRegularExpense(
                 planId,

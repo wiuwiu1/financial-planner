@@ -1,5 +1,8 @@
 package de.wiuwiu1.financialPlaner.application.regularExpense
 
+import de.wiuwiu1.financialPlaner.application.category.interactors.AddCategoryInteractor
+import de.wiuwiu1.financialPlaner.application.category.interactors.DeleteCategoryInteractor
+import de.wiuwiu1.financialPlaner.application.category.interactors.GetAllCategoriesByPlanIdInteractor
 import de.wiuwiu1.financialPlaner.application.regularExpense.interactors.AddRegularExpenseInteractor
 import de.wiuwiu1.financialPlaner.application.regularExpense.interactors.DeleteRegularExpenseInteractor
 import de.wiuwiu1.financialPlaner.application.regularExpense.interactors.GetAllRegularExpensesByPlanIdInteractor
