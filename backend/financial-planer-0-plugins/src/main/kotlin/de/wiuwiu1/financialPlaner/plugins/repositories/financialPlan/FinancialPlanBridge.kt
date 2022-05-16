@@ -4,9 +4,9 @@ import de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlan
 import org.springframework.stereotype.Repository
 
 @Repository
-class FinancialPlanBridge(
-        val repository: SpringDataFinancialPlanRepository
-        ) : de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlanRepository {
+class FinancialPlanBridge(val repository: SpringDataFinancialPlanRepository) :
+    de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlanRepository {
+
     override fun findAll(): List<FinancialPlan> {
         return repository.findAll()
     }
@@ -19,7 +19,8 @@ class FinancialPlanBridge(
         return repository.save(financialPlan)
     }
 
-    override fun update(financialPlan: FinancialPlan): FinancialPlan {
-        return repository.save(financialPlan)
+    override fun deleteById(id: Long) {
+        repository.deleteById(id)
     }
+
 }

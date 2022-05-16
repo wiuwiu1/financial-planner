@@ -5,12 +5,8 @@ import de.wiuwiu1.financialPlaner.adapter.financialPlan.FinancialPlanDTO
 import de.wiuwiu1.financialPlaner.adapter.financialPlan.FinancialPlanToDTOMapper
 import de.wiuwiu1.financialPlaner.application.financialPlan.FinancialPlanService
 import de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlan
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import java.util.stream.Collectors
 
 @RestController
 @RequestMapping("/api/financialPlan")
@@ -20,14 +16,20 @@ class FinancialPlanController(
     val dtoToFinancialPlanMapper: DTOToFinancialPlanMapper
 ) {
 
-    @GetMapping(params = ["id"],  produces = ["application/json;charset=UTF-8"])
-    fun getFinancialPlanById(@RequestParam id: Long): FinancialPlanDTO {
-        return financialPlanToDTOMapper.apply(service.getFinancialPlanById(id))
+    @GetMapping(produces = ["application/json;charset=UTF-8"])
+    fun getAllFinancialPlan(): List<FinancialPlanDTO> {
+        return service.getAllFinancialPlan().stream().map { plan -> financialPlanToDTOMapper.apply(plan) }
+            .collect(Collectors.toList())
     }
 
     // TODO: refactor to lambda / stream
-    @PostMapping(consumes =  ["application/json;charset=UTF-8"],produces = ["application/json;charset=UTF-8"])
+    @PostMapping(consumes = ["application/json;charset=UTF-8"], produces = ["application/json;charset=UTF-8"])
     fun createFinancialPlan(@RequestBody financialPlan: FinancialPlanDTO): FinancialPlanDTO {
         return financialPlanToDTOMapper.apply(service.createFinancialPlan(dtoToFinancialPlanMapper.apply(financialPlan)))
+    }
+
+    @DeleteMapping()
+    fun deleteFinancialPlanById(@RequestParam id: Long) {
+        service.deleteFinancialPlanById(id)
     }
 }
