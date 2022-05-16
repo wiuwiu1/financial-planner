@@ -1,6 +1,6 @@
-package de.wiuwiu1.financialPlaner.domain.types.converter
+package de.wiuwiu1.financialPlaner.domain.valueObjects.converter
 
-import de.wiuwiu1.financialPlaner.domain.types.Name
+import de.wiuwiu1.financialPlaner.domain.valueObjects.Name
 import javax.persistence.AttributeConverter
 import javax.persistence.Converter
 

@@ -1,4 +1,4 @@
-package de.wiuwiu1.financialPlaner.domain.financialPlan
+package de.wiuwiu1.financialPlaner.domain.entities.financialPlan
 
 interface FinancialPlanRepository {
     fun findAll(): List<FinancialPlan>

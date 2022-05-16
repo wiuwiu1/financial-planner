@@ -1,4 +1,4 @@
-package de.wiuwiu1.financialPlaner.domain.types
+package de.wiuwiu1.financialPlaner.domain.valueObjects
 
 data class MoneyAmount(val cents: Int) {
     init {

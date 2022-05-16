@@ -4,7 +4,7 @@ import de.wiuwiu1.financialPlaner.adapter.financialPlan.DTOToFinancialPlanMapper
 import de.wiuwiu1.financialPlaner.adapter.financialPlan.FinancialPlanDTO
 import de.wiuwiu1.financialPlaner.adapter.financialPlan.FinancialPlanToDTOMapper
 import de.wiuwiu1.financialPlaner.application.financialPlan.FinancialPlanService
-import de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlan
+import de.wiuwiu1.financialPlaner.domain.entities.financialPlan.FinancialPlan
 import org.springframework.web.bind.annotation.*
 import java.util.stream.Collectors
 

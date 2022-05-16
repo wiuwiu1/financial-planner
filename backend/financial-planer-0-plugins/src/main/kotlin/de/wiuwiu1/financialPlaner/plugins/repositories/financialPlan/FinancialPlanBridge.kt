@@ -1,11 +1,12 @@
 package de.wiuwiu1.financialPlaner.plugins.repositories.financialPlan
 
-import de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlan
+import de.wiuwiu1.financialPlaner.domain.entities.financialPlan.FinancialPlan
+import de.wiuwiu1.financialPlaner.domain.entities.financialPlan.FinancialPlanRepository
 import org.springframework.stereotype.Repository
 
 @Repository
 class FinancialPlanBridge(val repository: SpringDataFinancialPlanRepository) :
-    de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlanRepository {
+    FinancialPlanRepository {
 
     override fun findAll(): List<FinancialPlan> {
         return repository.findAll()

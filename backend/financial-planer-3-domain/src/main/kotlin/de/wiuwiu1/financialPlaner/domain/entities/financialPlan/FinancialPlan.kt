@@ -1,9 +1,9 @@
-package de.wiuwiu1.financialPlaner.domain.financialPlan
+package de.wiuwiu1.financialPlaner.domain.entities.financialPlan
 
-import de.wiuwiu1.financialPlaner.domain.types.MoneyAmount
-import de.wiuwiu1.financialPlaner.domain.types.converter.MoneyAmountConverter
-import de.wiuwiu1.financialPlaner.domain.types.Name
-import de.wiuwiu1.financialPlaner.domain.types.converter.NameConverter
+import de.wiuwiu1.financialPlaner.domain.valueObjects.MoneyAmount
+import de.wiuwiu1.financialPlaner.domain.valueObjects.converter.MoneyAmountConverter
+import de.wiuwiu1.financialPlaner.domain.valueObjects.Name
+import de.wiuwiu1.financialPlaner.domain.valueObjects.converter.NameConverter
 import javax.persistence.*
 
 

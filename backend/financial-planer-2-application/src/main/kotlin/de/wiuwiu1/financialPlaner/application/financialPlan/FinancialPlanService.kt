@@ -4,7 +4,7 @@ import de.wiuwiu1.financialPlaner.application.financialPlan.interactors.CreateFi
 import de.wiuwiu1.financialPlaner.application.financialPlan.interactors.DeleteFinancialPlanByIdInteractor
 import de.wiuwiu1.financialPlaner.application.financialPlan.interactors.GetAllFinancialPlanInteractor
 import de.wiuwiu1.financialPlaner.application.financialPlan.interactors.GetFinancialPlanByIdInteractor
-import de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlan
+import de.wiuwiu1.financialPlaner.domain.entities.financialPlan.FinancialPlan
 import org.springframework.stereotype.Service
 
 @Service

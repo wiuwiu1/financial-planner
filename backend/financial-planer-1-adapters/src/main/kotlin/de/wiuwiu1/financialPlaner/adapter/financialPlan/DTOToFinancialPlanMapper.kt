@@ -1,8 +1,8 @@
 package de.wiuwiu1.financialPlaner.adapter.financialPlan
 
-import de.wiuwiu1.financialPlaner.domain.financialPlan.FinancialPlan
-import de.wiuwiu1.financialPlaner.domain.types.MoneyAmount
-import de.wiuwiu1.financialPlaner.domain.types.Name
+import de.wiuwiu1.financialPlaner.domain.entities.financialPlan.FinancialPlan
+import de.wiuwiu1.financialPlaner.domain.valueObjects.MoneyAmount
+import de.wiuwiu1.financialPlaner.domain.valueObjects.Name
 import org.springframework.stereotype.Component
 import java.util.function.Function;
 
