@@ -1,10 +1,14 @@
 package de.wiuwiu1.financialPlaner.domain.entities.financialPlan
 
+import de.wiuwiu1.financialPlaner.domain.entities.categories.Category
 import de.wiuwiu1.financialPlaner.domain.valueObjects.MoneyAmount
 import de.wiuwiu1.financialPlaner.domain.valueObjects.converter.MoneyAmountConverter
 import de.wiuwiu1.financialPlaner.domain.valueObjects.Name
 import de.wiuwiu1.financialPlaner.domain.entities.regularExpense.RegularExpense
 import de.wiuwiu1.financialPlaner.domain.valueObjects.converter.NameConverter
+import org.hibernate.annotations.IndexColumn
+import org.hibernate.annotations.LazyCollection
+import org.hibernate.annotations.LazyCollectionOption
 import javax.persistence.*
 
 
@@ -18,11 +22,15 @@ data class FinancialPlan(
     val name: Name,
     @Convert(converter = MoneyAmountConverter::class)
     val budget: MoneyAmount,
-    @OneToMany(fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
-    var regularExpenses: MutableList<RegularExpense>
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = [CascadeType.ALL])
+    var regularExpenses: MutableList<RegularExpense>,
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = [CascadeType.ALL])
+    var categories: MutableList<Category>,
 ) {
 
-    constructor() : this(0, Name("abc"), MoneyAmount(0), emptyList<RegularExpense>().toMutableList())
+    constructor() : this(0, Name("abc"), MoneyAmount(0), emptyList<RegularExpense>().toMutableList(), emptyList<Category>().toMutableList())
 
 }
 
