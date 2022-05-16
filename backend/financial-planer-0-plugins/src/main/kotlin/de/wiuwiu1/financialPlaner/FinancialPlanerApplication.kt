@@ -1,4 +1,4 @@
-package de.wiuwiu1
+package de.wiuwiu1.financialPlaner
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
