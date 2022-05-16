@@ -1,5 +1,6 @@
-package de.wiuwiu1.financialPlaner.adapter.financialPlan
+package de.wiuwiu1.financialPlaner.adapter.regularExpense
 
+import de.wiuwiu1.financialPlaner.adapter.financialPlan.FinancialPlanDTO
 import de.wiuwiu1.financialPlaner.domain.entities.financialPlan.FinancialPlan
 import de.wiuwiu1.financialPlaner.domain.entities.regularExpense.RegularExpense
 import de.wiuwiu1.financialPlaner.domain.valueObjects.MoneyAmount
@@ -8,14 +9,13 @@ import org.springframework.stereotype.Component
 import java.util.function.Function;
 
 @Component
-class DTOToFinancialPlanMapper: Function<FinancialPlanDTO, FinancialPlan> {
+class DTOToRegularExpenseMapper : Function<RegularExpenseDTO, RegularExpense> {
 
-    override fun apply(dto: FinancialPlanDTO): FinancialPlan {
+    override fun apply(dto: RegularExpenseDTO): RegularExpense {
         return map(dto)
     }
 
-    private fun map(dto: FinancialPlanDTO): FinancialPlan {
-        return  FinancialPlan(dto.id, Name(dto.name), MoneyAmount(dto.budget), emptyList<RegularExpense>().toMutableList())
+    private fun map(dto: RegularExpenseDTO): RegularExpense {
+        return RegularExpense(dto.id, Name(dto.name), MoneyAmount(dto.value))
     }
-
 }

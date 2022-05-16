@@ -1,4 +1,4 @@
-package de.wiuwiu1.financialPlaner.plugins.rest.financialPlan
+package de.wiuwiu1.financialPlaner.plugins.rest
 
 import de.wiuwiu1.financialPlaner.adapter.financialPlan.DTOToFinancialPlanMapper
 import de.wiuwiu1.financialPlaner.adapter.financialPlan.FinancialPlanDTO
@@ -11,9 +11,9 @@ import java.util.stream.Collectors
 @RestController
 @RequestMapping("/api/financialPlan")
 class FinancialPlanController(
-    val service: FinancialPlanService,
-    val financialPlanToDTOMapper: FinancialPlanToDTOMapper,
-    val dtoToFinancialPlanMapper: DTOToFinancialPlanMapper
+    private val service: FinancialPlanService,
+    private val financialPlanToDTOMapper: FinancialPlanToDTOMapper,
+    private val dtoToFinancialPlanMapper: DTOToFinancialPlanMapper
 ) {
 
     @GetMapping(produces = ["application/json;charset=UTF-8"])
@@ -28,7 +28,7 @@ class FinancialPlanController(
         return financialPlanToDTOMapper.apply(service.createFinancialPlan(dtoToFinancialPlanMapper.apply(financialPlan)))
     }
 
-    @DeleteMapping()
+    @DeleteMapping(params = ["id"])
     fun deleteFinancialPlanById(@RequestParam id: Long) {
         service.deleteFinancialPlanById(id)
     }

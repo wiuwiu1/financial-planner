@@ -5,4 +5,5 @@ interface FinancialPlanRepository {
     fun findById(id: Long): FinancialPlan?
     fun create(financialPlan: FinancialPlan): FinancialPlan
     fun deleteById(id :Long)
+    fun update(financialPlan: FinancialPlan)
 }

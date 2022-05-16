@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component
 class GetFinancialPlanByIdInteractor(val financialPlanRepository: FinancialPlanRepository) {
 
     fun execute(id: Long): FinancialPlan {
-        val possiblePlan = financialPlanRepository.findById(id)
-        return possiblePlan ?: throw java.lang.RuntimeException()
+        return financialPlanRepository.findById(id)
+            ?: throw IllegalArgumentException("There is no financial plan with the id $id")
     }
 
 }

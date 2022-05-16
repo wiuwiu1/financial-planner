@@ -24,4 +24,8 @@ class FinancialPlanBridge(val repository: SpringDataFinancialPlanRepository) :
         repository.deleteById(id)
     }
 
+    override fun update(financialPlan: FinancialPlan) {
+        repository.save(financialPlan)
+    }
+
 }
