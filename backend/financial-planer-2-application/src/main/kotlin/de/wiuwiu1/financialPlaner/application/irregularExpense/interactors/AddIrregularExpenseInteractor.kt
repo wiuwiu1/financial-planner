@@ -21,7 +21,13 @@ class AddIrregularExpenseInteractor(
             throw IllegalArgumentException("Financial plan with the id $planId has no category with id $categoryId")
         val category = optionalCategory.get()
 
-        //todo category budget and irregular expense check
+        val expenseReport = budgetReportService.calculateIrregularExpenseBudgetReport(financialPlan)
+        if(expenseReport.leftBudget.cents < irregularExpense.amount.cents)
+            throw IllegalArgumentException("Financial plan with the id $planId has only ${expenseReport.leftBudget.cents} cents left")
+
+        val categoryReport = budgetReportService.calculateCategoricalBudgetReport(financialPlan.id, category)
+        if(categoryReport.leftBudget.cents < irregularExpense.amount.cents)
+            throw IllegalArgumentException("Category with the id ${category.id} has only ${categoryReport.leftBudget.cents} cents left")
 
         category.expenses.add(irregularExpense)
         financialPlanRepository.update(financialPlan)

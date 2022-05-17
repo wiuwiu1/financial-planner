@@ -19,7 +19,7 @@ class AddRegularExpenseInteractor(
         financialPlan.regularExpenses.stream().filter { expense -> expense.name == regularExpense.name }.findAny()
             .ifPresent {
                 throw IllegalArgumentException(
-                    "RegularExpense with name ${regularExpense.name} already exist with this name in the given financial plan"
+                    "RegularExpense with name ${regularExpense.name.value} already exist with this name in the given financial plan"
                 )
             }
 
