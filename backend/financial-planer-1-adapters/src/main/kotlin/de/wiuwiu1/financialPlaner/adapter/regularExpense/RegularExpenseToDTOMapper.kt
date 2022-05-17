@@ -12,7 +12,7 @@ class RegularExpenseToDTOMapper: Function<RegularExpense, RegularExpenseDTO> {
     }
 
     private fun map(expense: RegularExpense): RegularExpenseDTO {
-        return RegularExpenseDTO(expense.id, expense.name.value, expense.value.cents)
+        return RegularExpenseDTO(expense.id, expense.name.value, expense.amount.cents)
     }
 
 }

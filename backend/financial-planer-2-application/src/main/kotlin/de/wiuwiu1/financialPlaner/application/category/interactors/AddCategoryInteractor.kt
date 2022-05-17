@@ -30,6 +30,7 @@ class AddCategoryInteractor(
 
         financialPlan.categories.add(category)
         financialPlanRepository.update(financialPlan)
+
         return category
     }
 

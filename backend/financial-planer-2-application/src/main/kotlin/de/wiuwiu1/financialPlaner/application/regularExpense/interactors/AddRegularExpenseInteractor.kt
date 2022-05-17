@@ -24,8 +24,8 @@ class AddRegularExpenseInteractor(
             }
 
         val budgetReport = budgetReportService.calculateFinancePlanBudgetReport(financialPlan)
-        if (budgetReport.leftBudget.cents < regularExpense.value.cents)
-            throw  IllegalArgumentException("Cant plan regularExpense of ${regularExpense.value.cents}. Given financial plan has only ${budgetReport.leftBudget.cents} cents left.")
+        if (budgetReport.leftBudget.cents < regularExpense.amount.cents)
+            throw  IllegalArgumentException("Cant plan regularExpense of ${regularExpense.amount.cents}. Given financial plan has only ${budgetReport.leftBudget.cents} cents left.")
 
         financialPlan.regularExpenses.add(regularExpense)
         financialPlanRepository.update(financialPlan)

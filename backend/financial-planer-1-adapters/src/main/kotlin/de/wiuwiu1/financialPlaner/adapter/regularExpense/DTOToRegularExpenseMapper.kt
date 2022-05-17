@@ -1,7 +1,5 @@
 package de.wiuwiu1.financialPlaner.adapter.regularExpense
 
-import de.wiuwiu1.financialPlaner.adapter.financialPlan.FinancialPlanDTO
-import de.wiuwiu1.financialPlaner.domain.entities.financialPlan.FinancialPlan
 import de.wiuwiu1.financialPlaner.domain.entities.regularExpense.RegularExpense
 import de.wiuwiu1.financialPlaner.domain.valueObjects.MoneyAmount
 import de.wiuwiu1.financialPlaner.domain.valueObjects.Name

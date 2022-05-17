@@ -5,5 +5,5 @@ import de.wiuwiu1.financialPlaner.domain.valueObjects.Name
 
 interface Expense {
     val name: Name
-    val value: MoneyAmount
+    val amount: MoneyAmount
 }

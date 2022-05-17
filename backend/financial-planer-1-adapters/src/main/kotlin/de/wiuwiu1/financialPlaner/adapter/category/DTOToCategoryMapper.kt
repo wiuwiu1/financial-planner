@@ -2,6 +2,7 @@ package de.wiuwiu1.financialPlaner.adapter.category
 
 import de.wiuwiu1.financialPlaner.adapter.regularExpense.RegularExpenseDTO
 import de.wiuwiu1.financialPlaner.domain.entities.categories.Category
+import de.wiuwiu1.financialPlaner.domain.entities.irregularExpense.IrregularExpense
 import de.wiuwiu1.financialPlaner.domain.entities.regularExpense.RegularExpense
 import de.wiuwiu1.financialPlaner.domain.valueObjects.MoneyAmount
 import de.wiuwiu1.financialPlaner.domain.valueObjects.Name
@@ -16,6 +17,6 @@ class DTOToCategoryMapper : Function<CategoryDTO, Category> {
     }
 
     private fun map(dto: CategoryDTO): Category {
-        return Category(dto.id, Name(dto.name), MoneyAmount(dto.budget))
+        return Category(dto.id, Name(dto.name), MoneyAmount(dto.budget), emptyList<IrregularExpense>().toMutableList())
     }
 }

@@ -1,8 +1,5 @@
 package de.wiuwiu1.financialPlaner.application.regularExpense
 
-import de.wiuwiu1.financialPlaner.application.category.interactors.AddCategoryInteractor
-import de.wiuwiu1.financialPlaner.application.category.interactors.DeleteCategoryInteractor
-import de.wiuwiu1.financialPlaner.application.category.interactors.GetAllCategoriesByPlanIdInteractor
 import de.wiuwiu1.financialPlaner.application.regularExpense.interactors.AddRegularExpenseInteractor
 import de.wiuwiu1.financialPlaner.application.regularExpense.interactors.DeleteRegularExpenseInteractor
 import de.wiuwiu1.financialPlaner.application.regularExpense.interactors.GetAllRegularExpensesByPlanIdInteractor
@@ -11,9 +8,9 @@ import org.springframework.stereotype.Service
 
 @Service
 class RegularExpenseService(
-    val getAllRegularExpensesByPlanIdInteractor: GetAllRegularExpensesByPlanIdInteractor,
-    val addRegularExpenseInteractor: AddRegularExpenseInteractor,
-    val deleteRegularExpenseInteractor: DeleteRegularExpenseInteractor
+    private val getAllRegularExpensesByPlanIdInteractor: GetAllRegularExpensesByPlanIdInteractor,
+    private val addRegularExpenseInteractor: AddRegularExpenseInteractor,
+    private val deleteRegularExpenseInteractor: DeleteRegularExpenseInteractor
 ) {
 
     fun getAllRegularExpenseByFinancialPlanId(planId: Long): List<RegularExpense> {

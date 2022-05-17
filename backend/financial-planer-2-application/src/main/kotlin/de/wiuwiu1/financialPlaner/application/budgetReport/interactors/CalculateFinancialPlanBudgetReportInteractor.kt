@@ -10,7 +10,7 @@ class CalculateFinancialPlanBudgetReportInteractor {
 
     fun execute(financialPlan: FinancialPlan): FinancialPlanBudgetReport {
         var plannedBudget = 0
-        financialPlan.regularExpenses.forEach { expense -> plannedBudget += expense.value.cents }
+        financialPlan.regularExpenses.forEach { expense -> plannedBudget += expense.amount.cents }
         financialPlan.categories.forEach { category -> plannedBudget += category.budget.cents }
         return FinancialPlanBudgetReport(financialPlan.id, MoneyAmount(plannedBudget), MoneyAmount(financialPlan.budget.cents - plannedBudget))
     }

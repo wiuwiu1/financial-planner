@@ -28,7 +28,11 @@ class RegularExpenseController(
             .collect(Collectors.toList())
     }
 
-    @PostMapping(params = ["planId"], consumes = ["application/json;charset=UTF-8"])
+    @PostMapping(
+        params = ["planId"],
+        consumes = ["application/json;charset=UTF-8"],
+        produces = ["application/json;charset=UTF-8"]
+    )
     fun addRegularExpense(
         @RequestParam planId: Long,
         @RequestBody regularExpenseDTO: RegularExpenseDTO
