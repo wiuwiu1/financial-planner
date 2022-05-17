@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service
 
 @Service
 class FinancialPlanService(
-    val createFinancialPlanInteractor: CreateFinancialPlanInteractor,
-    val getFinancialPlanByIdInteractor: GetFinancialPlanByIdInteractor,
-    val getAllFinancialPlanInteractor: GetAllFinancialPlanInteractor,
-    val deleteFinancialPlanByIdInteractor: DeleteFinancialPlanByIdInteractor
+    private val createFinancialPlanInteractor: CreateFinancialPlanInteractor,
+    private val getFinancialPlanByIdInteractor: GetFinancialPlanByIdInteractor,
+    private val getAllFinancialPlanInteractor: GetAllFinancialPlanInteractor,
+    private val deleteFinancialPlanByIdInteractor: DeleteFinancialPlanByIdInteractor
 ) {
 
     fun createFinancialPlan(plan: FinancialPlan): FinancialPlan {
